@@ -1,0 +1,7 @@
+<h1>{% if object %}Editar{% else %}Cadastrar{% endif %} Pedido</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+    <a href="{% url 'pedido_list' %}">Voltar</a>
+</form>
