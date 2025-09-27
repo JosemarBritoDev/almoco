@@ -27,4 +27,5 @@ RUN poetry run python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Comando para iniciar o servidor (ajuste conforme o nome do seu módulo wsgi, padrão: marmitex)
-CMD ["poetry", "run", "gunicorn", "marmitex.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD poetry run python manage.py migrate && poetry run gunicorn marmitex.wsgi:application --bind 0.0.0.0:8000
+
