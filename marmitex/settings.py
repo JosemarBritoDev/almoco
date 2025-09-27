@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-import django_heroku
+
 import os
 
 
@@ -138,5 +138,4 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 # WhiteNoise para servir arquivos estáticos
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
-# Ativa configs do Django-Heroku
-django_heroku.settings(locals())
+
